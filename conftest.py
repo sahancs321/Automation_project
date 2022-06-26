@@ -20,7 +20,10 @@ def browser(request):
         options.add_experimental_option('prefs', {'intl.accept_languages': "ru"})
         browser = webdriver.Chrome(options=options)
     else:
-        raise pytest.UsageError("--browser_name should be ru or en")
+        browser_language == "en"
+        options = Options()
+        options.add_experimental_option('prefs', {'intl.accept_languages': "en"})
+        browser = webdriver.Chrome(options=options)
 
     print("\nstart browser for test..")
     yield browser
