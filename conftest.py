@@ -15,15 +15,12 @@ def browser(request):
         options.add_experimental_option('prefs', {'intl.accept_languages': "en"})
         browser = webdriver.Chrome(options=options)
 
-    elif browser_language == "ru":
+    else:
+        browser_language == "ru"
         options = Options()
         options.add_experimental_option('prefs', {'intl.accept_languages': "ru"})
         browser = webdriver.Chrome(options=options)
-    else:
-        browser_language == "en"
-        options = Options()
-        options.add_experimental_option('prefs', {'intl.accept_languages': "en"})
-        browser = webdriver.Chrome(options=options)
+
 
     print("\nstart browser for test..")
     yield browser
